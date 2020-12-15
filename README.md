@@ -1,3 +1,2 @@
 # viecourte.github.io
-码云：gitee.com
-python：python.org
+github.com gitee.com python.org
