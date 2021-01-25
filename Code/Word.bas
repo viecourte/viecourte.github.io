@@ -2,20 +2,20 @@ Attribute VB_Name = "NewMacros"
 Sub SelectAllTables()
     Dim tempTable As Table
     Application.ScreenUpdating = False
-    'ÅĞ¶ÏÎÄµµÊÇ·ñ±»±£»¤
+    'åˆ¤æ–­æ–‡æ¡£æ˜¯å¦è¢«ä¿æŠ¤
     If ActiveDocument.ProtectionType = wdAllowOnlyFormFields Then
-        MsgBox "ÎÄµµÒÑ±£»¤£¬´ËÊ±²»ÄÜÑ¡ÖĞ¶à¸ö±í¸ñ£¡"
+        MsgBox "æ–‡æ¡£å·²ä¿æŠ¤ï¼Œæ­¤æ—¶ä¸èƒ½é€‰ä¸­å¤šä¸ªè¡¨æ ¼ï¼"
         Exit Sub
     End If
-    'É¾³ıËùÓĞ¿É±à¼­µÄÇøÓò
+    'åˆ é™¤æ‰€æœ‰å¯ç¼–è¾‘çš„åŒºåŸŸ
     ActiveDocument.DeleteAllEditableRanges wdEditorEveryone
-    'Ìí¼Ó¿É±à¼­ÇøÓò
+    'æ·»åŠ å¯ç¼–è¾‘åŒºåŸŸ
     For Each tempTable In ActiveDocument.Tables
         tempTable.Range.Editors.Add wdEditorEveryone
     Next
-    'Ñ¡ÖĞËùÓĞ¿É±à¼­ÇøÓò
+    'é€‰ä¸­æ‰€æœ‰å¯ç¼–è¾‘åŒºåŸŸ
     ActiveDocument.SelectAllEditableRanges wdEditorEveryone
-    'É¾³ıËùÓĞ¿É±à¼­µÄÇøÓò
+    'åˆ é™¤æ‰€æœ‰å¯ç¼–è¾‘çš„åŒºåŸŸ
     ActiveDocument.DeleteAllEditableRanges wdEditorEveryone
     Application.ScreenUpdating = True
 End Sub
